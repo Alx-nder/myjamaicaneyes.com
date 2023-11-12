@@ -28,6 +28,28 @@
   margin: -20px;
 }
 
+/* .float-area{
+  height:100vh;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+} */
+
+
+
+.floating-img{
+  transform: translateY(-5%);
+  animation: float 7.5s infinite;
+  transition: ease 9.5s;
+  overflow: hidden;
+	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+
+
+}
+
 
 /* Gradient*/
 .movingGradient {
@@ -38,6 +60,22 @@
   -moz-animation: AnimationName 13s ease infinite;
   animation: AnimationName 13s ease infinite;
 }
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
 
 
 @-webkit-keyframes AnimationName {
