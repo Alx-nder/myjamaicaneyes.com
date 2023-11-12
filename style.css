@@ -1,6 +1,4 @@
 #sunset{
-    /* background-image: url(sunset1.jpeg); */
-    background-color: #ebc8a2;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size:cover;
@@ -28,17 +26,12 @@
   margin: -20px;
 }
 
-/* .float-area{
-  height:100vh;
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: center;
-} */
+.lean{
+  transform: perspective(100em) rotateX(30deg) rotateZ(10deg) skewY(17deg) rotateY(-20deg);
 
-
-
+}
 .floating-img{
+
   transform: translateY(-5%);
   animation: float 7.5s infinite;
   transition: ease 9.5s;
@@ -53,7 +46,7 @@
 
 /* Gradient*/
 .movingGradient {
-  background: linear-gradient(270deg, black,green, gold);
+  background: linear-gradient(270deg, #3a3937,green, gold,#3a3937);
   background-size: 600% 600%;
 
   -webkit-animation: AnimationName 13s ease infinite;
@@ -63,15 +56,15 @@
 
 @keyframes float {
 	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		box-shadow: 0 5px 15px 0px rgb(0, 0, 0,0.8);
 		transform: translatey(0px);
 	}
 	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.3);
 		transform: translatey(-20px);
 	}
 	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.8);
 		transform: translatey(0px);
 	}
 }
@@ -102,9 +95,43 @@
     #pic1{
       display: none;
     }
+    #gap{
+      padding-top: 0rem!important;
+      margin-top: 0rem!important;  
+      /* padding-bottom: 0rem; */
+    }
+
+    #title{
+      font-weight:300!important;  
+    }
   
     #container{
       width: 100%!important;
     }
   
    }
+
+
+
+   .animate-character
+{
+  background-image: linear-gradient(
+    -225deg,
+    #3a3937 0%,
+    rgb(2, 93, 2) 29%,
+    rgb(177, 151, 1) 67%,
+    #3a3937 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 6s linear infinite;
+
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
