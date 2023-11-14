@@ -44,6 +44,7 @@
 }
 
 
+
 /* Gradient*/
 .movingGradient {
   background: linear-gradient(270deg, #51504d,green, gold,#51504d);
@@ -113,7 +114,8 @@
 
 
 
-   .animate-character
+
+.animate-character
 {
   background-image: linear-gradient(
     -225deg,
