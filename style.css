@@ -26,9 +26,12 @@
   margin: -20px;
 }
 
+.lean1{
+  /* transform: perspective(100em) rotateX(30deg) rotateZ(10deg) skewY(-17deg) rotateY(-120deg) ; */
+}
+
 .lean{
   transform: perspective(100em) rotateX(30deg) rotateZ(10deg) skewY(17deg) rotateY(-20deg);
-
 }
 .floating-img{
 
@@ -38,7 +41,7 @@
   overflow: hidden;
 	box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
 	transform: translatey(0px);
-	animation: float 6s ease-in-out infinite;
+	animation: float 2s ease-in-out infinite;
 
 
 }
@@ -89,13 +92,16 @@
 }
 
 
-
-
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) { 
     #pic1{
       display: none;
     }
+    #picspace{
+      padding: 0rem!important;
+      margin: 0rem!important; 
+    }
+  
     #gap{
       padding-top: 0rem!important;
       margin-top: 0rem!important;  
@@ -111,6 +117,7 @@
     }
   
    }
+
 
 
 
