@@ -101,7 +101,9 @@
       padding: 0rem!important;
       margin: 0rem!important; 
     }
-  
+  #tword{
+    font-size: 3.5rem!important;
+  }
     #gap{
       padding-top: 0rem!important;
       margin-top: 0rem!important;  
