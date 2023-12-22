@@ -14,7 +14,7 @@
 
  
  <!-- home-welcome section-->
-    <div id="sunset" class="min-vh-100 " style="background-image: url(sundarkbase.jpeg);">
+    <div id="sunset" class="min-vh-100 " style="background-image: url(images/sundarkbase.jpeg);">
         <!-- start navbar -->
     <nav class="navbar   navbar-light navbar-expand-lg" style="background-color: rgb(0, 0, 0,0)!important;">
       <div class="container">
@@ -30,7 +30,7 @@
           <ul class="navbar-nav ml-auto" style="font-size:26px">
             <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
             <li class="nav-item"><a href="#booksection" class="nav-link active">Books</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link active">Blog</a></li>
+            <li class="nav-item"><a href="blog.php" class="nav-link active">Blog</a></li>
             
           </ul>
 
@@ -89,7 +89,7 @@
       <div class="row mx-3 pt-3 "  >
         <div class="col-md-5 my-4  py-4 bookplate"  >
           <div class="text-center">
-            <img id="usa"  src="usabook.jpeg" onclick="changeImage('usa')" alt=""  style="max-width: 60%;">
+            <img id="usa"  src="images/usabook.jpeg" onclick="changeImage('usa')" alt=""  style="max-width: 60%;">
           </div>
           
           <h4 class="my-4 text-center">Through My Jamaican Eyes Book 1</h4>
@@ -129,7 +129,7 @@
 
         <div class="col-md-5 my-4 bookplate py-4">
           <div class="text-center">
-            <img id="fire" src="firebook.jpeg" onclick="changeImage('fire')" alt="" style="max-width: 60%;">
+            <img id="fire" src="images/firebook.jpeg" onclick="changeImage('fire')" alt="" style="max-width: 60%;">
           </div>
             
             <h4 class="my-4 text-center">Through My Jamaican Eyes Book 2</h4>
@@ -200,10 +200,10 @@
     <script language="javascript">
       function changeImage(picurl) {
         item=document.getElementById(picurl)
-        if ('http://'+window.location.host+"/"+picurl+"book.jpeg" == item.src){
-            item.src = 'http://'+window.location.host+"/"+picurl+"back.jpeg";
+        if ('http://'+window.location.host+"/myjamaicaneyes.com/images/"+picurl+"book.jpeg" == item.src){
+            item.src = 'http://'+window.location.host+"/myjamaicaneyes.com/images/"+picurl+"back.jpeg";
         } else {
-            item.src = 'http://'+window.location.host+"/"+picurl+"book.jpeg";
+            item.src = 'http://'+window.location.host+"/myjamaicaneyes.com/images/"+picurl+"book.jpeg";
           }
     }
     </script>
