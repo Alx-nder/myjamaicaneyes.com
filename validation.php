@@ -6,12 +6,12 @@ session_destroy();
 
 session_start();
 $con = mysqli_connect('localhost','root','');
-mysqli_select_db($con, 'myjameye');
+mysqli_select_db($con, 'jameye');
 
 $email = $_POST['email'];
 $pass = $_POST['password'];
 
-$check = "select * from users where email= '$email' && password='$pass'";
+$check = "select * from login_id where email= '$email' && password='$pass'";
 
 $result = mysqli_query($con, $check);
 

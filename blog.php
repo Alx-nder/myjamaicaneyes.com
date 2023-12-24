@@ -1,7 +1,7 @@
 <?php
     session_start();   
     $con = mysqli_connect('localhost','root','');
-    mysqli_select_db($con, 'virttour');
+    mysqli_select_db($con, 'jameye');
 
     if(!$con)
     {
@@ -12,9 +12,9 @@
     {
         header('location:/myjamaicaneyes.com/index.html');
     } 
-    if($_SESSION['email']=='guest'){
-      header('location:/virtualTourWebsite/validations/login.php');
-    }
+    // if($_SESSION['email']=='guest'){
+    //   header('location:/virtualTourWebsite/validations/login.php');
+    // }
 ?>
 
 <!DOCTYPE html>
