@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     
-<form action="validation.php" class="text-center rounded" method="post">
+    <form action="validation.php" class="text-center rounded" method="post">
       <a href="index.html"><img class="pb-1" srcset="images/usabook.jpeg 3x" alt=""></a>
         <h2 class="pb-2">Log In</h2>
           <div class="mb-3 border-bottom">
@@ -17,10 +20,13 @@
           <input type="password" name="password" class="form-control border-0 bg-transparent" placeholder="Password" id="exampleInputPassword1" required>
         </div> 
         <button type="submit" class="btn btn-primary mb-3">Log In</button>
-        
+    </form>   
+
         <div>
-          <a class="text-dark" href="blog.php">Continue as Guest</a>  
+          <form method='POST' action="validation.php" class="text-center">
+            <button type='submit'><a class="text-dark" >Continue as Guest</a> </button> 
+          </form>
         </div>   
-      </form>   
 </body>
+
 </html>
