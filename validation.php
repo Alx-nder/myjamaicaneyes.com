@@ -11,12 +11,11 @@ mysqli_select_db($con, 'jameye');
 if ($_POST['email'] == '');
 $_POST['email'] ='guest';
 
-
 if ($_POST['password'] == '');
 $_POST['password'] ='guest';
 
-$email = $_POST['email'];
 
+$email = $_POST['email'];
 $pass = $_POST['password'];
 
 $check = "select * from login_id where email= '$email' && password='$pass'";

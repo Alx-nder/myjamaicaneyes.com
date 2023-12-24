@@ -23,8 +23,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lancelot AkaNico's blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body style="background-image: url(images/sundarkbase.jpeg);  background-repeat: no-repeat;background-size:cover;"
+
+
 <nav class="navbar   navbar-light navbar-expand-lg" style="background-color: rgb(0, 0, 0,0)!important;">
       <div class="container">
         <a href="index.html"  class="navbar-brand">
@@ -40,9 +45,13 @@
             <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
             <li class="nav-item"><a href="#booksection" class="nav-link active">Books</a></li>
             <li class="nav-item"><a href="#" class="nav-link active">Blog</a></li>
-            <li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a></li>
+              <?php
+              if(($_SESSION['email']='guest')){
+                echo('<li class="nav-item"><a href="login.php" class="nav-link active">Login</a></li>');
+              }
+              ?>
+            </ul>
 
-          </ul>
 
         </div>
       </div>
