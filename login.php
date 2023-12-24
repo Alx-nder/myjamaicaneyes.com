@@ -17,7 +17,7 @@
           <input type="password" name="password" class="form-control border-0 bg-transparent" placeholder="Password" id="exampleInputPassword1" required>
         </div> 
         <button type="submit" class="btn btn-primary mb-3">Log In</button>
-    
+        
         <div>
           <a class="text-dark" href="blog.php">Continue as Guest</a>  
         </div>   

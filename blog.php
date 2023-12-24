@@ -10,7 +10,7 @@
 
     if(!isset($_SESSION['email']))
     {
-        header('location:/myjamaicaneyes.com/index.html');
+        header('location:/myjamaicaneyes.com/login.php');
     } 
     // if($_SESSION['email']=='guest'){
     //   header('location:/virtualTourWebsite/validations/login.php');
@@ -39,8 +39,9 @@
           <ul class="navbar-nav ml-auto" style="font-size:26px">
             <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
             <li class="nav-item"><a href="#booksection" class="nav-link active">Books</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link active">Blog</a></li>
-            
+            <li class="nav-item"><a href="#" class="nav-link active">Blog</a></li>
+            <li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a></li>
+
           </ul>
 
         </div>
