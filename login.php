@@ -9,13 +9,27 @@ if(isset($_SESSION['email']))   // Checking whether the session is already there
 
 if(isset($_POST['login']))   // it checks whether the user clicked login button or not 
 {
-     $user = $_POST['email'];
+
+      if ($_POST['email'] ==''){
+        $_POST['email'] ='guest';
+      }
+      else{
+          $email = $_POST['email'];
+      }
+
+      if ($_POST['password'] ==''){
+          $_POST['password'] ='guest';
+      }
+      else{
+          $pass = $_POST['password'];
+      }
+     $email = $_POST['email'];
      $pass = $_POST['password'];
 
-      if(($user == "lancelot" && $pass == "lanceloteyes")||($user=='guest'&& $pass=='guest'))  // username is  set to "Ank"  and Password   
+      if(($email == "lancelot" && $pass == "lanceloteyes")||($email=='guest'&& $pass=='guest'))  // username is  set to "Ank"  and Password   
          {                                   // is 1234 by default     
 
-          $_SESSION['email']=$user;
+          $_SESSION['email']=$email;
 
          echo '<script type="text/javascript"> window.open("blog.php","_self");</script>';            //  On Successful Login redirects to home.php
         }
@@ -52,8 +66,8 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
     </form>   
 
         <div>
-          <form method='POST' action="validation.php" class="text-center">
-            <button type='submit' name="login"><a class="text-dark" >Continue as Guest</a> </button> 
+          <form method='POST' action="" class="text-center">
+            <button type='submit' name="login">Continue as Guest</button> 
           </form>
         </div>   
 </body>
