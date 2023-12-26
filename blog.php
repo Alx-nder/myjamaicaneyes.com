@@ -43,10 +43,6 @@
 </head>
 
 <body style="background-image: url(images/sundarkbase.jpeg);  background-repeat: no-repeat;background-size:cover;">
-
-    <?php
-echo($_SESSION['email'])
-?>
     <nav class="navbar   navbar-light navbar-expand-lg" style="background-color: rgb(0, 0, 0,0)!important;">
         <div class="container">
             <a href="index.html" class="navbar-brand">
@@ -75,6 +71,30 @@ echo($_SESSION['email'])
         </div>
     </nav>
 
+    <?php 
+    if ($_SESSION['email']=='lancelot'){
+    echo("
+    
+      <form class='' method='POST' action=''>
+      <div class='form-row'>
+        <div class='form-group col-md-6'>
+          <label >Title</label>
+          <input type='text' name='title' class='form-control'  placeholder='Title' required>
+        </div>
+      </div>
+
+      <div class='form-group'>
+      <label for='exampleFormControlTextarea1'>Writing</label>
+        <textarea class='form-control' name='writing' type='text' rows='3' required></textarea>
+      </div>
+      
+      <button type='submit' name ='upload' style='background-color: #7292c7;' class='btn  mb-3'>Upload</button>
+    </form>"
+    );   
+    } 
+
+    ?>
+
     <div class="container  col-md-5">
         <main class="mt-1">
             <div id="for_rec" class="container">
@@ -84,6 +104,8 @@ echo($_SESSION['email'])
                     <hr>
                 </div>
                 <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec">
+
+
                     <?php
   
   $sql = "SELECT * FROM blogpost ORDER BY 'date' asc";
@@ -113,28 +135,7 @@ echo($_SESSION['email'])
                 </div>
             </div>
         </main>
-        <?php 
-    if ($_SESSION['email']=='lancelot'){
-    echo("
-      <form class='' method='POST' action=''>
-      <div class='form-row'>
-        <div class='form-group col-md-6'>
-          <label >Title</label>
-          <input type='text' name='title' class='form-control'  placeholder='Title' required>
-        </div>
-      </div>
 
-      <div class='form-group'>
-      <label for='exampleFormControlTextarea1'>Writing</label>
-        <textarea class='form-control' name='writing' type='text' rows='3' required></textarea>
-      </div>
-      
-      <button type='submit' name ='upload' style='background-color: #7292c7;' class='btn  mb-3'>Upload</button>
-    </form>"
-    );   
-    } 
-
-    ?>
     </div>
 </body>
 
