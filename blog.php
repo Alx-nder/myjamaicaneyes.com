@@ -14,6 +14,21 @@
     {
         header('location:/myjamaicaneyes.com/login.php');
     } 
+// upload post
+    if(isset($_POST['upload'])) {
+	
+      $title = $_POST["title"];
+      $writing = $_POST["writing"];
+      $date = date('Y-m-d');
+      $date=$date;
+      
+        $sql = "INSERT INTO `blogpost` (`date`,`title`,`writing`)  VALUE ('$date','$title','$writing')";
+        $result = mysqli_query($con, $sql);
+    
+        if ($result) {
+            $showAlert = true;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +79,7 @@ echo($_SESSION['email'])
     <?php 
     if ($_SESSION['email']=='lancelot'){
     echo("
-      <form class='' method='POST' action='upload.php'>
+      <form class='' method='POST' action=''>
       <div class='form-row'>
         <div class='form-group col-md-6'>
           <label >Title</label>
@@ -77,7 +92,7 @@ echo($_SESSION['email'])
         <textarea class='form-control' name='writing' type='text' rows='3' required></textarea>
       </div>
       
-      <button type='submit' style='background-color: #7292c7;' class='btn  mb-3'>Upload</button>
+      <button type='submit' name ='upload' style='background-color: #7292c7;' class='btn  mb-3'>Upload</button>
     </form>"
     );   
     } 
@@ -85,21 +100,22 @@ echo($_SESSION['email'])
     ?>
   <?php
   
+      $sql = "SELECT * FROM blogpost";
+      $result = $result = mysqli_query($con, $sql);
   // Associative array
       
       while($row = $result -> fetch_assoc()){
         echo"<div class='col'>  
         <div class='card h-100 bg-light'>
-        <img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:auto; object-fit:contain;' alt='",$row['tour_link'],"'>
         
         <div class='card-body'>
-        <h5 class='card-title'>",$row['house_location'],"</h5>
-        <h5 class='card-title'>",$row['price'],"</h5>
-        <p class='card-text fs-6'>Total acres of land: ",$row['land'],"<br>Total acres of living space: ",$row['living_space'],"<br>No. of Bedrooms: ",$row['bedrooms'],"<br>No. of Bathrooms: ",$row['bathrooms'],"<br>Built/renovated: ",$row['age']," years ago</p>
+        <h5 class='card-title'>Title: ",$row['title'],"</h5>
+
+        <p class='card-text fs-6'>",$row['writing'],"</p>
         </div>
-        
+
         <div class='card-footer'>
-        <small class='text-muted'>Contact: ",$row['posted_by'],"</small>
+        <small class='text-muted'>Date: ",$row['date'],"</small>
         </div>
         </div>
         </div>";

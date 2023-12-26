@@ -18,16 +18,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO `blogpost` (`date`,`title`,`writing`)  VALUE ('$date','$title','$writing')";
     $result = mysqli_query($con, $sql);
 
-    // $sql = "INSERT INTO `blogpost` (`title`)  VALUE ('$title')";
-    // $result = mysqli_query($con, $sql);
-    
-    // $sql = "INSERT INTO `blogpost` (`writing`)  VALUE ('$writing')";
-    // $result = mysqli_query($con, $sql);
-
     if ($result) {
         $showAlert = true;
     }
 }
-header('location:/myjamaicaneyes.com/blog.php');
+// header('location:/myjamaicaneyes.com/blog.php');
 
 ?>

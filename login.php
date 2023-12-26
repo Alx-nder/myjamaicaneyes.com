@@ -1,11 +1,12 @@
-<?php  session_start();   // session starts with the help of this function 
+<?php
 
-
-if(isset($_SESSION['email']))   // Checking whether the session is already there or not if 
-                              // true then header redirect it to the home page directly 
+if(isset($_SESSION['email']))
  {
     header("Location:blog.php"); 
  }
+else{
+  session_start();            
+}
 
 if(isset($_POST['login']))   // it checks whether the user clicked login button or not 
 {
