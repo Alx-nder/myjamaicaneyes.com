@@ -5,7 +5,7 @@ if(isset($_SESSION['email']))
     header("Location:blog.php"); 
  }
 else{
-  session_start();            
+  // session_start();            
 }
 
 if(isset($_POST['login']))   // it checks whether the user clicked login button or not 
@@ -29,7 +29,7 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
 
       if(($email == "lancelot" && $pass == "lanceloteyes")||($email=='guest'&& $pass=='guest'))  // username is  set to "Ank"  and Password   
          {                                   // is 1234 by default     
-
+          session_start();            
           $_SESSION['email']=$email;
 
          echo '<script type="text/javascript"> window.open("blog.php","_self");</script>';            //  On Successful Login redirects to home.php
@@ -53,7 +53,7 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    
+  
     <form action="" class="text-center rounded" method="post">
       <a href="index.html"><img class="pb-1" srcset="images/usabook.jpeg 3x" alt=""></a>
         <h2 class="pb-2">Log In</h2>

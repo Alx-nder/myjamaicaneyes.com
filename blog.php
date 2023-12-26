@@ -1,6 +1,5 @@
 <?php
     session_start(); 
-    session_destroy();
 
     $con = mysqli_connect('localhost','root','');
     mysqli_select_db($con, 'jameye');
@@ -25,9 +24,8 @@
         $sql = "INSERT INTO `blogpost` (`date`,`title`,`writing`)  VALUE ('$date','$title','$writing')";
         $result = mysqli_query($con, $sql);
     
-        if ($result) {
-            $showAlert = true;
-        }
+        echo '<script type="text/javascript"> window.open("blog.php","_self");</script>';            //  On Successful Login redirects to home.php
+        
     }
 ?>
 
