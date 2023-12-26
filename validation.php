@@ -8,15 +8,21 @@ session_start();
 $con = mysqli_connect('localhost','root','');
 mysqli_select_db($con, 'jameye');
 
-if ($_POST['email'] == '');
-$_POST['email'] ='guest';
+if ($_POST['email'] ==''){
+    $_POST['email'] ='guest';
+}
+else{
+    $email = $_POST['email'];
+}
 
-if ($_POST['password'] == '');
-$_POST['password'] ='guest';
+if ($_POST['password'] ==''){
+    $_POST['password'] ='guest';
+}
+else{
+    $pass = $_POST['password'];
+}
 
 
-$email = $_POST['email'];
-$pass = $_POST['password'];
 
 $check = "select * from login_id where email= '$email' && password='$pass'";
 

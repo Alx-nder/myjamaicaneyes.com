@@ -1,5 +1,7 @@
 <?php
-    session_start();   
+    session_start(); 
+    session_destroy();
+
     $con = mysqli_connect('localhost','root','');
     mysqli_select_db($con, 'jameye');
 
@@ -12,9 +14,6 @@
     {
         header('location:/myjamaicaneyes.com/login.php');
     } 
-    // if($_SESSION['email']=='guest'){
-    //   header('location:/virtualTourWebsite/validations/login.php');
-    // }
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +28,9 @@
 </head>
 <body style="background-image: url(images/sundarkbase.jpeg);  background-repeat: no-repeat;background-size:cover;">
 
-
+<?php
+echo($_SESSION['email'])
+?>
 <nav class="navbar   navbar-light navbar-expand-lg" style="background-color: rgb(0, 0, 0,0)!important;">
       <div class="container">
         <a href="index.html"  class="navbar-brand">
@@ -46,8 +47,11 @@
             <li class="nav-item"><a href="#booksection" class="nav-link active">Books</a></li>
             <li class="nav-item"><a href="#" class="nav-link active">Blog</a></li>
               <?php
-              if(($_SESSION['email']='guest')){
+              if(($_SESSION['email']=='guest')){
                 echo('<li class="nav-item"><a href="login.php" class="nav-link active">Login</a></li>');
+              }
+              else{
+                echo('<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a></li>');
               }
               ?>
           </ul>
@@ -55,25 +59,56 @@
       </div>
     </nav>
 
-   <div class="container  col-md-5">
+    <div class="container  col-md-5">
 
-  <form class="" method="POST" action="upload.php">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label >Title</label>
-              <input type="text" name='title' class="form-control"  placeholder="Title" required>
-            </div>
-          </div>
+    <?php 
+    if ($_SESSION['email']=='lancelot'){
+    echo("
+      <form class='' method='POST' action='upload.php'>
+      <div class='form-row'>
+        <div class='form-group col-md-6'>
+          <label >Title</label>
+          <input type='text' name='title' class='form-control'  placeholder='Title' required>
+        </div>
+      </div>
 
-          <div class="form-group">
-           <label for="exampleFormControlTextarea1">Writing</label>
-            <textarea class="form-control" name='writing' type='text' rows="3" required></textarea>
-          </div>
-          
-          <button type="submit" style="background-color: #7292c7;" class="btn  mb-3">Upload</button>
+      <div class='form-group'>
+      <label for='exampleFormControlTextarea1'>Writing</label>
+        <textarea class='form-control' name='writing' type='text' rows='3' required></textarea>
+      </div>
+      
+      <button type='submit' style='background-color: #7292c7;' class='btn  mb-3'>Upload</button>
+    </form>"
+    );   
+    } 
 
+    ?>
+  <?php
+  
+  // Associative array
+      
+      while($row = $result -> fetch_assoc()){
+        echo"<div class='col'>  
+        <div class='card h-100 bg-light'>
+        <img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:auto; object-fit:contain;' alt='",$row['tour_link'],"'>
+        
+        <div class='card-body'>
+        <h5 class='card-title'>",$row['house_location'],"</h5>
+        <h5 class='card-title'>",$row['price'],"</h5>
+        <p class='card-text fs-6'>Total acres of land: ",$row['land'],"<br>Total acres of living space: ",$row['living_space'],"<br>No. of Bedrooms: ",$row['bedrooms'],"<br>No. of Bathrooms: ",$row['bathrooms'],"<br>Built/renovated: ",$row['age']," years ago</p>
+        </div>
+        
+        <div class='card-footer'>
+        <small class='text-muted'>Contact: ",$row['posted_by'],"</small>
+        </div>
+        </div>
+        </div>";
+      }
+      // Free result set
+      $result -> free_result();
+    
 
-        </form>
+?>
         </div>
 </body>
 </html>
