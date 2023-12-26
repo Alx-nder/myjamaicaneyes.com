@@ -75,8 +75,8 @@
     if ($_SESSION['email']=='lancelot'){
     echo("
     
-      <form class='' method='POST' action=''>
-      <div class='form-row'>
+      <form class='container col-lg-5' method='POST' action=''>
+      <div class=' form-row'>
         <div class='form-group col-md-6'>
           <label >Title</label>
           <input type='text' name='title' class='form-control'  placeholder='Title' required>
@@ -92,41 +92,40 @@
     </form>"
     );   
     } 
-
     ?>
 
-    <div class="container  col-md-5">
+    <div class="container  col-lg-9">
         <main class="mt-1">
-            <div id="for_rec" class="container">
+            <div id="for_rec" class="">
                 <div class="list-group pt-3 me-5 rounded-0 list-group-horizontal ">
                     <hr>
-                    <h3 class="text-center pb-3">Listings based on your activity</h3>
+                    <h3 class="text-center pb-3">Lancelot AkaNico's Writings</h3>
                     <hr>
                 </div>
                 <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec">
 
 
-                    <?php
-  
+  <?php
   $sql = "SELECT * FROM blogpost ORDER BY 'date' asc";
   $result = $result = mysqli_query($con, $sql);
-// Associative array
+  // Associative array
   
   while($row = $result -> fetch_assoc()){
-    echo"<div class='col'>  
-    <div class='card h-100 bg-light'>
-    
-    <div class='card-body'>
-    <h5 class='card-title'>Title: ",$row['title'],"</h5>
+    echo"
+    <div class='col my-2'>  
+      <div class='card h-100 bg-light'>
+        <div class='card-body'>
+          <h5 class='card-title'>Title: ",$row['title'],"</h5>
 
-    <p class='card-text fs-6'>",$row['writing'],"</p>
-    </div>
+          <p class='card-text fs-6'>",$row['writing'],"</p>
+        </div>
 
-    <div class='card-footer'>
-    <small class='text-muted'>Date: ",$row['date'],"</small>
+        <div class='card-footer'>
+        <small class='text-muted'>Date: ",$row['date'],"</small>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>";
+    ";
   }
   // Free result set
   $result -> free_result();
@@ -137,6 +136,17 @@
         </main>
 
     </div>
-</body>
+
+ <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <!-- <embed class="modal-content" id="for_tour" src="" type=""> -->
+    <div class="modal-content">
+     <p id="for_read"> jjhjh</p>
+    </div>
+  </div>
+
+  <script  type = "text/javascript" src="script.js"></script>
+  </body>
 
 </html>
