@@ -9,9 +9,9 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    if(!isset($_SESSION['email']))
+    if(!isset($_SESSION['email']) || ($_SESSION['email']!="lancelot"))
     {
-        header('location:/myjamaicaneyes.com/login.php');
+      $_SESSION['email'] = 'guest';
     } 
 // upload post
     if(isset($_POST['upload'])) {
@@ -56,13 +56,13 @@
 
                 <ul class="navbar-nav ml-auto" style="font-size:26px">
                     <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="#booksection" class="nav-link active">Books</a></li>
+                    <li class="nav-item"><a href="index.html#booksection" class="nav-link active">Books</a></li>
                     <li class="nav-item"><a href="#" class="nav-link active">Blog</a></li>
                     <?php
-              if(($_SESSION['email']=='guest')){
-                echo('<li class="nav-item"><a href="login.php" class="nav-link active">Login</a></li>');
-              }
-              else{
+              // if(($_SESSION['email']=='guest')){
+              //   echo('<li class="nav-item"><a href="login.php" class="nav-link active">Login</a></li>');
+              // }
+              if(($_SESSION['email']=='lancelot')){
                 echo('<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a></li>');
               }
               ?>
@@ -72,7 +72,7 @@
     </nav>
 
     <?php 
-    if ($_SESSION['email']=='lancelot'){
+    if (($_SESSION['email']=='lancelot')){
     echo("
     
       <form class='container col-lg-5' method='POST' action=''>
@@ -106,7 +106,7 @@
 
 
   <?php
-  $sql = "SELECT * FROM blogpost ORDER BY 'date' asc";
+  $sql = "SELECT * FROM blogpost ORDER BY 'date' desc";
   $result = $result = mysqli_query($con, $sql);
   // Associative array
   
@@ -142,7 +142,7 @@
     <span class="close">&times;</span>
     <!-- <embed class="modal-content" id="for_tour" src="" type=""> -->
     <div class="modal-content">
-     <p id="for_read"> jjhjh</p>
+     <p id="for_read"></p>
     </div>
   </div>
 
