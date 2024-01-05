@@ -115,7 +115,7 @@
     <div class='col my-2'>  
       <div class='card h-100 bg-light'>
         <div class='card-body'>
-          <h5 class='card-title'>Title: ",$row['title'],"</h5>
+          <h5 class='card-title'>",$row['title'],"</h5>
 
           <p class='card-text fs-6'>",$row['writing'],"</p>
         </div>
