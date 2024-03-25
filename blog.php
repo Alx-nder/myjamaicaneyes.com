@@ -172,7 +172,7 @@
 
   <!-- Start Socket -->
     <div class="socket text-light text-center py-3" style="background-color: #3a3937;">
-      <p style="color: #bcbdb8;">&copy; <a class="font-italic" style="color: #bcbdb8;" href="https://www.linkedin.com/in/tyreek-alexander-b142ba22a/" >Made by Hungros</a></p>
+      <p style="color: #bcbdb8;">&copy; <a class="font-italic" style="color: #bcbdb8;" href="https://www.linkedin.com/in/tyreek-alexander-b142ba22a/" >2024</a></p>
     </div>
 
 
