@@ -149,4 +149,31 @@
   <script  type = "text/javascript" src="script.js"></script>
   </body>
 
+  
+  <!-- start footer  -->
+  <footer class="" id="contact" style="background-color: #3a3937;">
+      <div class="container">
+        <div class="row text-light text-center py-4 justify-content-center">
+          <div class="col-sm-10 col-m-8 col-lg-6">
+            <a href="login.php">
+              <h1 class="pb-2 display-4 font-weight-bold" style="color: #bcbdb8;">LANCELOT</h1>
+            </a>
+                        <h5 style="color: #bcbdb8;">For any media inquiries, please contact:</h5>
+            <!-- social media links to be inserted here -->
+            <ul class="pt-3 list-unstyled font-weight-bold">
+              <a style="color: #bcbdb8;" href="#"> <i class="fa fa-envelope">&nbsp;  jamaicaneyes1016@gmail.com&nbsp; &nbsp; </i></a>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- end footer  -->
+
+  <!-- Start Socket -->
+    <div class="socket text-light text-center py-3" style="background-color: #3a3937;">
+      <p style="color: #bcbdb8;">&copy; <a class="font-italic" style="color: #bcbdb8;" href="https://www.linkedin.com/in/tyreek-alexander-b142ba22a/" >Made by Hungros</a></p>
+    </div>
+
+
 </html>
