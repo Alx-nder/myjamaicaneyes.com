@@ -140,9 +140,9 @@
  <!-- The Modal -->
   <div id="myModal" class="modal">
     <span class="close">&times;</span>
-    <!-- <embed class="modal-content" id="for_tour" src="" type=""> -->
+    
     <div class="modal-content">
-     <p id="for_read"></p>
+     <p class="for_read"></p>
     </div>
   </div>
 
